@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Motivational Message app</title>
+    <style>
+	*{font-size:40px; margin: 0px; padding: 0px;}
+	body{background-color:lightblue}
+	h2{background-color: darkred; color: aliceblue;}
+    </style>
+  </head>
+  <body>
+	<center>
+		<h1>Motivational Message App</h1>
+		<br>
+		<h2 id="ans"></h2>
+	</center>
+	<script>
+	   function show()
+	   {
+		let ans=document.getElementById("ans")
+		let urladd="http://api.quotable.io/random"
+		fetch(urladd)
+		.then(res=> res.json())
+		.then(data => ans.innerHTML=data.content)
+		.catch(err => console.log(err))	
+	   }
+	   show()
+	   setInterval(show,5000)
+	</script>
+  </body>  
+</html>
