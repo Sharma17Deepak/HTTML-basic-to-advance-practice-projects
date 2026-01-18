@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title> Time Convertor App</title> 
+    <style>
+	*{font-size:50px}
+	body{background-color: lightblue;}
+    </style>
+  </head>
+  <body>
+     <center>
+	<h1>Time Convertor</h1>
+	<form>
+		Time In Minutes
+		<br/>
+		<input type="number" step="any" placeholder="enter time in minutes" id="min">
+		<br></br>
+		Time In Seconds
+		<br/>
+		<input type="number" step="any" placeholder="enter time in seconds" id="sec">
+		<br></br>		
+	</form>
+	<script>
+		let m=document.getElementById("min")
+		let s=document.getElementById("sec")
+		
+		min.addEventListener("input",function(){
+			let m=parseFloat(min.value)
+			if(m<0)
+			{
+				alert("Invalid Input")
+				min.value=""
+				min.focus()
+			}
+			else
+			{
+				let s=m*60
+				sec.value=s
+			}
+	
+		})
+		sec.addEventListener("input",function(){
+			let s=parseFloat(sec.value)
+			if(s<0)
+			{
+				alert("Invalid Input")
+				sec.value=""
+				sec.focus()
+			}
+			else
+			{
+				let m = s/60
+				m=m.toFixed(2)
+				min.value=m
+			}
+		})
+
+	</script>
+     </center>
+  </body>
+</html>
