@@ -1,0 +1,60 @@
+<html>
+  <head>
+     <style>
+        	* {font-size: 50px}
+		body {
+			background-color:DarkBlue;
+			color:white
+		}
+     </style>
+     <title>PG generator</title>
+     <script>
+	function gen(event)
+        {
+		event.preventDefault();
+		let text="abcdefghijklmnopqrstuvwxyz"
+		let len = document.getElementById("len")
+		let uc = document.getElementById("uc")
+		let di = document.getElementById("di")
+		let ans = document.getElementById("ans")
+		let name = document.getElementById("name");		
+
+		if(uc.checked)
+		{
+			text= text + text.toUpperCase()
+		}
+		if(di.checked)
+		{
+			text = text + "0123456789"
+		}
+		let pw = ""
+		for(i=1;i<=len.value;i++)
+		{
+			let r = parseInt(Math.random() * text.length)
+			pw = pw + name + text[r]
+		}
+		ans.innerHTML= "password = " + pw
+	}
+     </script>
+  </head>
+  <body>
+    <center>
+	<h1>Generate Password</h1>
+	<form onsubmit="return gen(event)">
+	Select Password Length
+	<select id="len">
+	    <option value="6"> 6 </option>
+	    <option value="7"> 7 </option>
+	    <option value="8"> 8 </option>
+	    <option value="9"> 9 </option>
+	</select>
+	<br></br>
+	<input type="checkbox" id="uc" name="uc"/>Uppercase
+	<input type="checkbox" id="di" name="di"/>Digits
+	<br><br/>
+	<input type="submit" value="Generate Password"/>
+	</form>	
+	<h2 id="ans"></h2>
+    </center>
+  </body>
+</html>
