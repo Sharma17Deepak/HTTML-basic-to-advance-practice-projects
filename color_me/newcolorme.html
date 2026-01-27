@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Color Me App</title>
+  </head>
+  <body>
+	<script>
+	function show()
+	{
+		let colors=["red","yellow","blue","green","black","purple","orange","pink"]
+		let r = parseInt(Math.random()*colors.length)
+		document.body.style.backgroundColor=colors[r]
+	}
+	show()
+	setInterval(show,300)
+    </script>
+  </body>
+</html>
