@@ -1,0 +1,25 @@
+<html>
+<script>
+    let timeout = null; //
+    function debounceSum() {
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+            calcSum()
+        },1000)
+    }
+    function calcSum() {
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        const ans = parseInt(a) + parseInt(b);
+        const result = document.getElementById("sum");
+        result.innerHTML = "Result = "+ans;
+    } 
+</script>
+
+<body>
+    <input oninput="debounceSum()" id="num1" type="text" placeholder="Enter a number" /> <br><br />
+    <input oninput="debounceSum()" id="num2" type="text" placeholder="Enter a number" /> <br><br />
+    <div id="sum"></div>
+</body>
+
+</html>
