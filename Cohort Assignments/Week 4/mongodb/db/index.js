@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //Connect to MongoDB
-mongoose.connect("your url");
+mongoose.connect("mongodb+srv://admin:Deepak098%40@cluster0.farjfaj.mongodb.net/Courses_app");
 
 //Define schemas
 const AdminSchema = new mongoose.Schema({
@@ -25,9 +25,9 @@ const CourseSchema = new mongoose.Schema({
     price : Number
 });
 
-const Admin = mongooose.model("Admin",AdminSchema);
-const User = mongooose.model("Admin",UserSchema);
-const Course = mongooose.model("Admin",CourseSchema);
+const Admin = mongoose.model("Admin",AdminSchema);
+const User = mongoose.model("User",UserSchema);
+const Course = mongoose.model("Course",CourseSchema);
 
 module.exports = {
     Admin,
